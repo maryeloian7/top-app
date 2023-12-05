@@ -11,13 +11,18 @@
     "stylelint": "stylelint  \"**/*.css\" --fix"
   },
   "dependencies": {
-    "next": "14.0.1",
+    "classnames": "^2.3.2",
+    "next": "^14.0.3",
     "postcss-syntax": "^0.36.2",
     "react": "^18",
     "react-dom": "^18",
+    "sass": "^1.69.5",
+    "scss": "^0.2.4",
     "stylelint-config-standard": "^34.0.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/classnames": "^2.3.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -25,10 +30,6 @@
     "@typescript-eslint/parser": "^6.9.1",
     "eslint": "^8.53.0",
     "eslint-config-next": "14.0.1",
-    "stylelint": "^15.11.0",
-    "stylelint-config-idiomatic-order": "^9.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-order-config-standard": "^0.1.3",
     "typescript": "^5"
   }
 }
