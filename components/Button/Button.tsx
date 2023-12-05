@@ -25,7 +25,7 @@ export const Button = ({
             //  [styles.down] : arrow == 'down',
           })}
         >
-          <img src="/Arrow.svg" alt="arrow"/>
+          <img src="/icons/Arrow.svg" alt="arrow"/>
         </span>
       )}
     </button>
