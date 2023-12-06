@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Button.module.css";
 import { ButtonProps } from "./Button.props";
 import cn from "classnames";
@@ -22,10 +23,10 @@ export const Button = ({
         <span
           className={cn(styles.arrow, {
             [styles.down]: arrow == "down",
-            //  [styles.down] : arrow == 'down',
+            [styles.right]: arrow == "right",
           })}
         >
-          <img src="/icons/Arrow.svg" alt="arrow"/>
+          <Image src="/icons/Arrow.svg" alt="arrow" width={6} height={10}/>
         </span>
       )}
     </button>
