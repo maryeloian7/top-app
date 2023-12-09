@@ -1,9 +1,12 @@
-.filled {
-    fill: var(--primary);
-    color: var(--primary);
-    background-color: var(--primary);
+.filled{
+    box-shadow: 1px 1px 5px var(--primary);
 }
 
-.star {
+
+.star{
     margin-right: 5px;
+}
+
+.editable{
+    cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import { RatingProps } from "./Rating.props";
+import StarIcon from "../../public/icons/Star.svg";
 import Image from "next/image";
 import styles from "./Rating.module.css";
 import cn from "classnames";
@@ -18,22 +19,49 @@ export const Rating = ({
     constructRating(rating);
   }, [rating]);
 
+  const changeDisplay = (i: number) => {
+    if (!isEditable) {
+      return;
+    }
+    constructRating(i);
+  };
+
+  const onClick = (i: number) => {
+    if (!isEditable || !setRating) {
+      return;
+    }
+    setRating(i);
+  };
+
+
   const constructRating = (currentRating: number) => {
     const updateArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
-        <Image
-          src="/icons/Star.svg"
-          alt="Star"
-          width={15}
-          height={15}
-          className={cn(styles.star, { [styles.filled]: i < currentRating })}
-        />
+        <span
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(rating)}
+          onClick={() => onClick(i + 1)}
+          key={i}
+          className={cn( {  [styles.editable]: isEditable })}
+        >
+          <Image
+            src={StarIcon}
+            alt="Star"
+            width={15}
+            height={15}
+            className={cn(styles.star, { [styles.filled]: i < currentRating})}
+          />
+        </span>
       );
     });
     setRatingArray(updateArray);
   };
 
-  return <div className={cn()} {...props}>
-    {ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
-  </div>;
+  return (
+    <div className={cn()} {...props}>
+      {ratingArray.map((r, i) => (
+        <span key={i}>{r}</span>
+      ))}
+    </div>
+  );
 };
